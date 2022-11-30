@@ -17,16 +17,19 @@ public class FilaDinamica {
         No aux = new No(elemento, null);
         if (frente == null)  // Fila vazia, é o primeiro a entrar
             frente = aux;
-        else tras.setProx(aux);
+        else
+            tras.setProx(aux);
         tras = aux; // aux é o novo elemento de trás
         quantos++;
     }
     public int desenfileira()
     {  No aux;
-        if (frente == null) return 0; // O ideal seria gear uma Exception
+        if (frente == null)
+            return 0; // O ideal seria gear uma Exception
         aux = frente;
         frente = aux.getProx(); // proximo aponta p/ o 2o da fila ou null
-        if (frente == null) tras = null; // ficou vazia …
+        if (frente == null)
+            tras = null; // ficou vazia …
         quantos--;
         return aux.getDado();
     }
